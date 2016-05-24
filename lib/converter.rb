@@ -1,11 +1,10 @@
 require_relative 'character_map'
 
 class Converter
-  attr_accessor :map, :braille_word, :english_word, :test_map
+  attr_accessor :map, :braille_word, :english_word
 
   def initialize
     @map = CharacterMap.new
-    @test_map = CharacterMap.new.braille.invert
   end
 
   def to_english(braille_character)
@@ -46,6 +45,7 @@ end
 
 c = Converter.new
 
-  require "pry"; binding.pry
+
+  #require "pry"; binding.pry
 
   1+1
