@@ -8,6 +8,7 @@ class CharacterMap
     @character_map.merge!(space)
     @character_map.merge!(caps)
     @character_map.merge!(pound)
+    @character_map.merge!(punctuation)
   end
 
     def lower
@@ -70,6 +71,17 @@ class CharacterMap
     def pound
       pound = {"#" => [".","0",".","0","0","0"]}
     end
+
+    def punctuation
+      punctuation = {
+                "!" => [".",".","0","0","0","."],
+                "'" => [".",".",".",".","0","."],
+                "," => [".",".","0",".",".","."],
+                "-" => [".",".",".",".","0","0"],
+                "." => [".",".","0","0",".","0"],
+                "?" => [".",".","0",".","0","0"]
+              }
+            end
 
 
     # @english = {

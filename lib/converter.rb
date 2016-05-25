@@ -1,7 +1,7 @@
 require_relative 'character_map'
 
 class Converter
-  attr_accessor :map, :braille_word, :english_word
+  attr_accessor :map, :braille_word, :english_word, :character
 
   def initialize
     @map = CharacterMap.new
@@ -41,9 +41,10 @@ class Converter
     string = line_1.join + ("\n") + line_2.join + ("\n") + line_3.join
   end
 
-end
 
+end
 # c = Converter.new
+
 #
 #
 #   require "pry"; binding.pry
