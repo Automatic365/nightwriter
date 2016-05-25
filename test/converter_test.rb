@@ -1,4 +1,4 @@
-require 'testhelper'
+require_relative 'testhelper'
 require './lib/converter'
 
 class ConverterTest < Minitest::Test

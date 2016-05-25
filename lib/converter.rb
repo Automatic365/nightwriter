@@ -8,11 +8,11 @@ class Converter
   end
 
   def to_english(braille_character)
-    @map.english[(braille_character)]
+    @map.character_map.invert[(braille_character)]
   end
 
   def to_braille(character)
-    @map.braille[(character)]
+    @map.character_map[(character)]
   end
 
   def to_braille_word(english_word)
@@ -43,9 +43,9 @@ class Converter
 
 end
 
-c = Converter.new
-
-
-  #require "pry"; binding.pry
-
-  1+1
+# c = Converter.new
+#
+#
+#   require "pry"; binding.pry
+#
+#   1+1
