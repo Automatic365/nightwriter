@@ -47,11 +47,6 @@ end
 n = NightRead.new
 n.decode_file_to_english
 
-
-
 puts "Created '#{ARGV[1]}' containing #{File.read(ARGV[1]).chomp.length} characters"
-
-
-
 
 puts ARGV.inspect

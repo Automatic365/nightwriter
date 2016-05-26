@@ -40,7 +40,4 @@ n.encode_file_to_braille
 
 puts "Created '#{ARGV[1]}' containing #{File.read(ARGV[0]).chomp.length} characters"
 
-
-
-
 puts ARGV.inspect
