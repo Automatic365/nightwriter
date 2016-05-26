@@ -16,24 +16,18 @@ class Converter
   end
 
   def to_braille_word(english_word)
-    word = english_word.split("")
-    @braille_word = word.map do |letter|
+    @braille_word = english_word.strip.each_char.map do |letter|
       to_braille(letter)
     end
   end
 
-  def to_english_word(braille_word)
-    word = braille_word
-    @english_word = word.map do |letter|
-      to_english(letter)
-    end.join
-  end
 
   def make_lines
     line_1 = []
     line_2 = []
     line_3 = []
-    @braille_word.map do |char|
+
+    @braille_word.compact.map do |char|
       line_1 << char[0]
       line_2 << char[1]
       line_3 << char[2]
@@ -43,10 +37,3 @@ class Converter
 
 
 end
-# c = Converter.new
-
-#
-#
-#   require "pry"; binding.pry
-#
-#   1+1

@@ -14,7 +14,7 @@ class FileReader
 end
 
 class NightWrite
-  attr_reader :reader, :converter, :braille, :message
+  attr_reader :reader, :converter, :braille
 
   def initialize
     @reader = FileReader.new
@@ -38,8 +38,7 @@ end
 n = NightWrite.new
 n.encode_file_to_braille
 
-
-puts "Created '#{ARGV[1]}' containing #{n.reader.read.size} characters"
+puts "Created '#{ARGV[1]}' containing #{File.read(ARGV[0]).chomp.length} characters"
 
 
 

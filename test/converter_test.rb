@@ -17,12 +17,6 @@ class ConverterTest < Minitest::Test
     assert_equal ["0.", "..", ".."], c.to_braille("a")
   end
 
-  def test_numbers_can_be_braille_too
-
-    c = Converter.new
-    assert_equal [".0", "0.", ".."], c.to_braille("9")
-  end
-
   def test_space_is_braille
     c = Converter.new
     assert_equal ["..", "..", ".."], c.to_braille(" ")
@@ -53,6 +47,16 @@ class ConverterTest < Minitest::Test
   def test_can_output_single_braille_to_english
     english = Converter.new
     assert_equal "n", english.to_english(["00", ".0", "0."])
+  end
+
+  def test_can_output_single_braille_to_english
+    c = Converter.new
+    assert_equal "A", c.to_english(["..0.","....",".0.."])
+  end
+
+  def test_returns_correct_capital_letter_of_braille
+    c = Converter.new
+    assert_equal ["..0.","....",".0.."], c.to_braille("A")
   end
 
 end
